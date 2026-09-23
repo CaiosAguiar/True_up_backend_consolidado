@@ -1,0 +1,16 @@
+openapi: 3.0.3
+info: {title: TRUE-UP 2026 API, version: 1.0.0}
+components:
+  securitySchemes: {ownerToken: {type: http, scheme: bearer}}
+security: [{ownerToken: []}]
+paths:
+  /health: {get: {security: [], responses: {'200': {description: OK}, '503': {description: Degraded}}}}
+  /api/colaboradores: {get: {responses: {'200': {description: Lista paginada}}}}
+  /api/colaboradores/{matricula}: {get: {parameters: [{name: matricula, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Colaborador}}}}
+  /api/licencas: {get: {responses: {'200': {description: Lista}}}, post: {responses: {'201': {description: Criada}}}}
+  /api/licencas/{id}: {put: {parameters: [{name: id, in: path, required: true, schema: {type: integer}}], responses: {'200': {description: Atualizada}}}}
+  /api/atribuicoes: {get: {responses: {'200': {description: Lista}}}, post: {responses: {'201': {description: Criada}}}}
+  /api/atribuicoes/{id}/liberacao: {post: {parameters: [{name: id, in: path, required: true, schema: {type: integer}}], responses: {'200': {description: Liberada}}}}
+  /api/transferencias: {post: {responses: {'200': {description: Transferencia atomica}}}}
+  /api/historico: {get: {responses: {'200': {description: Historico}}}}
+  /api/dashboard: {get: {responses: {'200': {description: Indicadores}}}}
