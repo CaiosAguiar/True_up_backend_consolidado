@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRUE-UP 2026</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section id="login">
+  <form id="lf" class="panel">
+    <h1>TRUE-UP <span>2026</span></h1>
+    <p class="muted">Gestão de licenças de software</p>
+    <label>URL da API<input id="base" placeholder="Vazio = mesma origem (ex.: http://127.0.0.1:5000)"></label>
+    <label>Token do proprietário<input id="tok" type="password" required autocomplete="off"></label>
+    <button class="btn">Entrar</button>
+    <p id="lerr" class="err" role="alert"></p>
+  </form>
+</section>
+<div id="app" hidden>
+  <aside>
+    <h1>TRUE-UP <span>2026</span></h1>
+    <nav id="nav"></nav>
+    <div class="foot"><span id="hl" class="dot"></span><span id="ht">API</span><button id="out" class="link">Sair</button></div>
+  </aside>
+  <main id="main"></main>
+</div>
+<dialog id="dlg"></dialog>
+<div id="toasts" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
